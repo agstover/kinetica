@@ -1,0 +1,19 @@
+{
+    "title": "Plumbing",
+    "location": "/learn/plumbing",
+    "items": [
+        {
+            "title": "Intro to Plumbing",
+            "items": [
+                {
+                    "title": "First Things First",
+                    "location": "/learn/plumbing/first-things-first"
+                },
+                {
+                    "title": "Second Things Second",
+                    "location": "/learn/plumbing/second-things-second"
+                }
+            ]
+        }
+    ]
+}

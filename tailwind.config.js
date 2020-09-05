@@ -3,10 +3,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'accent-1': '#333',
+        'primary': '#5dbf5f',
+        'seconary': '#6c49cc'
       },
     },
   },
   variants: {},
   plugins: [],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
 }

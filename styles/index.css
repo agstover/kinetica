@@ -2,14 +2,67 @@
 
 /* Write your own custom base styles here */
 
+body {
+  background-color: #000000;
+  color: #fff;
+}
+
 /* Start purging... */
 @tailwind components;
 /* Stop purging. */
 
 /* Write you own custom component styles here */
-.btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+.btn {
+  @apply text-white font-bold py-2 px-4 rounded;
 }
+
+.btn-disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply bg-primary;
+}
+
+/* .side-nav.primary {
+  @apply bg-blue-400;
+} */
+
+.side-nav-width {
+  @apply w-56
+}
+
+.side-nav {
+  @apply w-56 bg-gray-900 opacity-75;
+}
+
+.side-nav.primary .nav-item {
+  @apply text-lg;
+}
+
+.side-nav.primary .nav-item.active {
+  @apply text-green-500;
+}
+
+.side-nav.side-nav.secondary .nav-item.active {
+  @apply text-purple-600 font-bold;
+}
+
+.side-nav.secondary .group-title {
+  @apply uppercase text-lg mb-2 mt-4;
+}
+
+.side-nav.primary .group-content .nav-item {
+  @apply text-sm text-gray-400;
+}
+
+.side-nav.secondary {
+  @apply ;
+}
+
+
+
+
 
 /* Start purging... */
 @tailwind utilities;

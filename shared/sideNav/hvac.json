@@ -1,0 +1,19 @@
+{
+    "title": "HVAC",
+    "location": "/learn/hvac",
+    "items": [
+        {
+            "title": "Intro to HVAC",
+            "items": [
+                {
+                    "title": "First Things First",
+                    "location": "/learn/hvac/first-things-first"
+                },
+                {
+                    "title": "Second Things Second",
+                    "location": "/learn/hvac/second-things-second"
+                }
+            ]
+        }
+    ]
+}
