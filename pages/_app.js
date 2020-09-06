@@ -28,22 +28,24 @@ function MyApp({ Component, pageProps, router }) {
   const getLayout = Component.getLayout || (page => page)
   const cms = makeTinaCMS(pageProps)
   return (
-    <TinaProvider cms={cms}>
-      <TinacmsGithubProvider
-        onLogin={onLogin}
-        onLogout={onLogout}
-        error={pageProps.error}
-      >
-        <AnimatePresence exitBeforeEnter>
-          <MainLayout>
-          <EditLink cms={cms} />
-            {
-              getLayout(<Component {...pageProps} test={true} key={router.route}/>)
-            }
-          </MainLayout>
-        </AnimatePresence>
-      </TinacmsGithubProvider>
-    </TinaProvider>
+    <>
+        <TinaProvider cms={cms}>
+          <TinacmsGithubProvider
+           onLogin={onLogin}
+           onLogout={onLogout}
+           error={pageProps.error}
+         >
+          <AnimatePresence exitBeforeEnter>
+            <MainLayout>
+            <EditLink cms={cms} />
+              {
+                getLayout(<Component {...pageProps} test={true} key={router.route}/>)
+              }
+            </MainLayout>
+          </AnimatePresence>
+        </TinacmsGithubProvider>
+      </TinaProvider>
+    </>
   )
 }
 

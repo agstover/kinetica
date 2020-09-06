@@ -1,5 +1,8 @@
 import { useSideNavContext } from './sideNavContext'
 import SideNav from '../SideNav'
+import { motion } from 'framer-motion'
+import {getSideNavMotionVariants} from 'shared/sideNav'
+
 
 const Cascade = (item, depth = 0)=> {
     return (
@@ -17,24 +20,30 @@ const Cascade = (item, depth = 0)=> {
 const SecondarySideNav = ({navData}) => {
     const {isOpen, updateOpenItems} = useSideNavContext()
     return (
-        <SideNav variant='primary' >
+        <SideNav variant='secondary' >
             <motion.div initial="exit" animate="enter" exit="exit">
-                <motion.div variants={sideNavMotionVariants}>
+                <motion.div variants={getSideNavMotionVariants()}>
                     {
                         navData.map(item => {
-                            if(item.location) return <SideNav.Item key={item.id} text={item.title} location={item.location} />
-                            if(item.items) return (
-                                <SideNav.Group key={item.id} title={item.title} managed collapsible={item.collapsible} active={isOpen(item.id)} onClick={()=>updateOpenItems(item.id)}>
-                                    {
-                                        <Cascade item={item} />
-                                    }
-                                </SideNav.Group>
-                            )
+                            if(!item.location) return <SideNav.Title key={item.id}>{item.title}</SideNav.Title>
+                            if(item.items) return <Cascade key={item.id} item={item}/>
                         })
                     }
                 </motion.div> 
             </motion.div>
         </SideNav>
-
     )
+}
+
+export default function SecondarySideNavLayout({navData, children}) {
+    console.log("NAV DATA", navData);
+    return (
+        <div>
+            <SecondarySideNav navData={navData} />
+            {
+                children
+            }
+        </div>
+    )
+
 }
