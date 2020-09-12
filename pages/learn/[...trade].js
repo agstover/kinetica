@@ -1,36 +1,43 @@
 import renderToString from 'next-mdx-remote/render-to-string'
 import hydrate from 'next-mdx-remote/hydrate'
-import { SecondarySideNavLayout } from "components/layouts"
 import path from 'path'
 import fs from 'fs'
 import { getFilePaths } from 'lib/utils'
 import matter from 'gray-matter'
+import { MainLayout } from 'components/layouts'
+import SecondarySideNav from 'components/SecondarySideNav'
+import { getSideNavData } from 'shared/sideNav'
+import Post from 'components/Post'
+import omit from 'lodash.omit'
+import { useAppStateContext } from 'shared/appState'
 
+const root = process.cwd()
 
-const root = process.cwd() + '/_content'
-
-export default function Learn(props) {
-  const {nav, mdxSource, frontMatter} = props
+export default function Learn({mdxSource, frontMatter, navData, tradeData}) {
   const content = hydrate(mdxSource)
   return (
-      <SecondarySideNavLayout navData={nav.items}>
-          <div className='text-white'>
+      <MainLayout sideNav={<SecondarySideNav tradeData={tradeData} navData={navData}/>}>
+        <Post title={frontMatter.title || 'This is where title should go.'}>
           {
             content
           }
-          </div>
-      </SecondarySideNavLayout>
+        </Post>
+      </MainLayout>
   )
 }
 
 export async function getStaticProps({params}) {
-    const root = process.cwd()
+    
+    const trade = params.trade[0]
     const targetExists = filepath => fs.existsSync(filepath)
     // getNavData
     // this is a catch-all route so params.trade is an array of all url segments
-    const tradeNavLocation = path.join(process.cwd(),`/shared/sideNav/${params.trade[0]}`)
-    const nav = await fs.promises.readFile(`${tradeNavLocation}.json`)
+    const navDataPath = path.join(process.cwd(),`/shared/sideNav/${trade}`)
+    let rawNavData = await fs.promises.readFile(`${navDataPath}.json`)
+      .then(data => JSON.parse(data))
 
+    const {asNavTree:navData} = getSideNavData(rawNavData['items'])
+    
     // getContent
     let contentPath = `${root}/_content/learn/${params.trade.join('/')}`
 
@@ -40,11 +47,13 @@ export async function getStaticProps({params}) {
       contentPath,
       'utf-8'
     )
+
     const { data:frontMatter, content } = matter(source)
     const mdxSource = await renderToString(content)
     return {
       props: {
-        nav: JSON.parse(nav),
+        tradeData: omit(rawNavData,['items']),
+        navData,
         mdxSource,
         frontMatter
       }, // will be passed to the page component as props
@@ -52,9 +61,9 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
-    const paths = getFilePaths(`${root}/learn`, fs)
+    const paths = getFilePaths(`${root}/_content/learn`, fs)
       .map(path => {
-        let arr = path.split(`${root}/learn/`)[1]
+        let arr = path.split(`${root}/_content/learn/`)[1]
         .split('/')
         arr.splice(arr.length -1, 1, arr[arr.length -1 ].replace(/\.mdx/, ''))
         if(arr[arr.length - 1] === 'index') arr.splice(arr.length - 1, 1)

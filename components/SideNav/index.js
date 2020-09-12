@@ -6,7 +6,7 @@ import cn from 'classnames'
 
 export default function SideNav({variant = 'primary', children}) {
     return (
-        <div className={cn('side-nav', variant)}>
+        <div className={'sidenav-width'}>
             {
                 React.Children.map(children, child => React.cloneElement(child, {variant}))
             }

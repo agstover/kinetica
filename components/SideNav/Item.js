@@ -2,11 +2,19 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-export default function Item({text, location, active, secondary}) {
+export default function Item(props) {
+    const {
+        children, 
+        location, 
+        active, 
+        className = '',
+        as
+    } = props
+    const Component = as || 'a'
     return (
-        <a href={location}>
-            <h1 className={cn('nav-item',`${active ? 'active': ''}`)}>{text}</h1>
-        </a>
+        <Component href={location}>
+            <h1 className={cn(className, 'nav-item cursor-pointer text-gray-400',`${active ? 'text-primary' : ''}`)}>{children}</h1>
+        </Component>
     )
 }
 

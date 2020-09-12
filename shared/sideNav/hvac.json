@@ -1,17 +1,22 @@
 {
     "title": "HVAC",
     "location": "/learn/hvac",
+    "avatar": "/avatars/hvac.png",
     "items": [
         {
-            "title": "Intro to HVAC",
+            "title": "Summary",
+            "location": "/learn/hvac/summary"
+        },
+        {
+            "title": "The Science",
             "items": [
                 {
-                    "title": "First Things First",
-                    "location": "/learn/hvac/first-things-first"
+                    "title": "Temperature",
+                    "location": "/learn/hvac/the-science/temperature"
                 },
                 {
-                    "title": "Second Things Second",
-                    "location": "/learn/hvac/second-things-second"
+                    "title": "Air Pressure",
+                    "location": "/learn/hvac/the-science/air-pressure"
                 }
             ]
         }

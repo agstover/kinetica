@@ -1,9 +1,10 @@
-const { MainLayout } = require("../components/layouts")
+import { withMainLayoutAndPrimarySideNav } from 'components/layouts/MainLayout'
 
 export default function Resources() {
-    return (
-        <h1>RESOURCES</h1>
-    )
+  return (
+    <h1>Resources</h1>
+  )
 }
 
-Resources.getLayout = page => <MainLayout primarySideNav>{page}</MainLayout>
+Resources.getLayout = page => withMainLayoutAndPrimarySideNav(page)
+

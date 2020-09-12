@@ -4,21 +4,20 @@ import Toggle from './Toggle'
 import Content from './Content'
 import { useState } from 'react'
 
-import { noop } from '../../../lib/utils'
 import { DropdownContext } from './context'
 
-export default function Dropdown({collapsible, managed, active, children}) {
-    const [_active, _setActive] = useState(active === false)
-    const getActive = () => {
-        if(!collapsible) return true
-        return managed === true ? active : _active
+export default function Dropdown({children}) {
+    const [open, toggle] = useState(false)
+    const onToggle = e => {
+        e.preventDefault()
+        toggle(!open)
     }
-    const setActive = ({value}) => {
-        if(!collapsible) return noop
-        if(managed !== true) return _setActive(value)
+    const context = {
+        onToggle,
+        open
     }
     return (
-        <DropdownContext.Provider value={{collapsible, getActive, setActive}}>
+        <DropdownContext.Provider value={context}>
             <div>
                 {
                     children
@@ -27,6 +26,31 @@ export default function Dropdown({collapsible, managed, active, children}) {
         </DropdownContext.Provider>
     )
 }
+
+Dropdown.Toggle = Toggle
+Dropdown.Content = Content
+
+// export default function Dropdown({collapsible, managed, active, children}) {
+//     const [_active, _setActive] = useState(active === false)
+//     const isActive = () => {
+//         console.log("ACTIVE?", _active);
+//         if(!collapsible) return true
+//         return managed === true ? active : _active
+//     }
+//     const setActive = (value) => {
+//         if(!collapsible) return noop
+//         if(managed !== true) return _setActive(value)
+//     }
+//     return (
+//         <DropdownContext.Provider value={{collapsible, isActive, setActive}}>
+//             <div>
+//                 {
+//                     children
+//                 }
+//             </div>
+//         </DropdownContext.Provider>
+//     )
+// }
 
 Dropdown.Toggle = Toggle
 Dropdown.Content = Content

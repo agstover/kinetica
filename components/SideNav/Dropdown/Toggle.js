@@ -5,21 +5,15 @@ import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
 const Chevron = active => active ? <BsChevronDown/> : <BsChevronUp/>
 
 export default function Toggle({children, onClick}) {
-    const ctx = useDropdownContext()
-    const onClickHandler = (onClick, ctx) => e => {
-        console.log("ACTIVE", ctx.getActive());
-        if(onClick !== undefined) onClick(e)
-        ctx.setActive(!ctx.getActive())
-    }
-    
+    const {onToggle, open} = useDropdownContext()    
     return (
-        <div className='nav-item flex flex-row cursor-pointer' onClick={onClickHandler(onClick,ctx)}>
+        <div className='nav-item flex flex-row cursor-pointer' onClick={onToggle}>
             <div className='flex-grow'>
                 {children}
             </div>
             <div className='flex items-center'>
                 {
-                    ctx.collapsible ? Chevron(ctx.getActive()) : null
+                    Chevron(open)
                 }
             </div>
         </div>

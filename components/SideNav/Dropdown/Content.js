@@ -1,12 +1,11 @@
 import { useDropdownContext } from "./context"
-import { Children } from "react"
 
 export default function Content({children}) {
-    const { getActive } = useDropdownContext()
+    const { open } = useDropdownContext()
     return (
         <div className='pl-4'>
             {
-                !getActive()
+                !open
                 ? null
                 : children
             }
