@@ -16,3 +16,5 @@ fields:
   config: {}
   template: trade-nav-items
   label: Items
+pages:
+- shared/sideNav/hvac.json
