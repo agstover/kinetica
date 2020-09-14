@@ -1,4 +1,27 @@
 ---
 label: Trade Nav Items
 hide_body: true
-fields: []
+fields:
+- name: items
+  type: field_group_list
+  fields:
+  - name: title
+    type: text
+    config:
+      required: false
+    label: Title
+  - name: location
+    type: text
+    config:
+      required: false
+    label: Location
+  - name: items
+    type: include
+    config: {}
+    template: trade-nav-items
+    label: Items
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Items
