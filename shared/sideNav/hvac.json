@@ -1,24 +1,28 @@
 {
-    "title": "HVAC",
-    "location": "/learn/hvac",
-    "avatar": "/avatars/hvac.png",
-    "items": [
+  "title": "HVAC",
+  "location": "/learn/hvac",
+  "avatar": "/avatars/hvac.png",
+  "items": [
+    {
+      "title": "Summary",
+      "location": "/learn/hvac/summary"
+    },
+    {
+      "title": "The Science",
+      "items": [
         {
-            "title": "Summary",
-            "location": "/learn/hvac/summary"
+          "title": "Metallurgy",
+          "location": "/learn/the-science/metallurgy"
         },
         {
-            "title": "The Science",
-            "items": [
-                {
-                    "title": "Temperature",
-                    "location": "/learn/hvac/the-science/temperature"
-                },
-                {
-                    "title": "Air Pressure",
-                    "location": "/learn/hvac/the-science/air-pressure"
-                }
-            ]
+          "title": "Temperature",
+          "location": "/learn/hvac/the-science/temperature"
+        },
+        {
+          "title": "Air Pressure",
+          "location": "/learn/hvac/the-science/air-pressure"
         }
-    ]
+      ]
+    }
+  ]
 }
