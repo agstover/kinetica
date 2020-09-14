@@ -1,0 +1,23 @@
+---
+label: Trade Nav Base Item
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: text
+  name: location
+  label: location
+- type: file
+  name: avatar
+  label: avatar
+- type: field_group_list
+  name: items
+  label: items
+  fields:
+  - type: text
+    name: title
+    label: title
+  - type: text
+    name: location
+    label: location
