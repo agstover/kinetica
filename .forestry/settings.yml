@@ -9,7 +9,7 @@ sections:
   label: Learn/Trade Content
   create: all
   match: "**/*{.md, .mdx}"
-  new_doc_ext: ".mdx"
+  new_doc_ext: mdx
 - type: directory
   path: shared/sideNav
   label: Trade Menus
@@ -23,8 +23,9 @@ front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
 build:
+  preview_output_directory: _next
   install_dependencies_command: npm install
   preview_docker_image: forestryio/node:12
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: npm run develop
+  instant_preview_command: npm run dev
