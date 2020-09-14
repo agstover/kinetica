@@ -11,13 +11,8 @@ fields:
 - type: file
   name: avatar
   label: avatar
-- type: field_group_list
-  name: items
-  label: items
-  fields:
-  - type: text
-    name: title
-    label: title
-  - type: text
-    name: location
-    label: location
+- name: items
+  type: include
+  config: {}
+  template: trade-nav-items
+  label: Items
