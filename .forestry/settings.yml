@@ -5,6 +5,12 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
+  path: _content/learn
+  label: Learn/Trade Content
+  create: all
+  match: "**/*{.md, .mdx}"
+  new_doc_ext: ".mdx"
+- type: directory
   path: shared/sideNav
   label: Trade Menus
   create: all
