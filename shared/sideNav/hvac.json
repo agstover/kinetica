@@ -8,8 +8,50 @@
       "location": "",
       "items": [
         {
+          "title": "Evaporative Cooling",
+          "location": "/learn/hvac/refrigeration/evaporative-cooling",
+          "items": [
+
+          ]
+        },
+        {
+          "title": "Refrigeration Basics",
+          "location": "/learn/hvac/refrigeration/refrigeration-basics",
+          "items": [
+
+          ]
+        },
+        {
+          "title": "Compressor",
+          "location": "/learn/hvac/refrigeration/compressor",
+          "items": [
+
+          ]
+        },
+        {
+          "title": "Condensor",
+          "location": "/learn/hvac/refrigeration/condensor",
+          "items": [
+
+          ]
+        },
+        {
+          "title": "Thermostatic Expansion Valve",
+          "location": "learn/hvac/refrigeration/txv",
+          "items": [
+
+          ]
+        },
+        {
           "title": "Evaporator",
-          "location": "/learn/refrigeration/evaporator",
+          "location": "/learn/hvac/refrigeration/evaporator",
+          "items": [
+
+          ]
+        },
+        {
+          "title": "Additional Processes",
+          "location": "/learn/hvac/refrigeration/additional-refrigeration-processes",
           "items": [
 
           ]
