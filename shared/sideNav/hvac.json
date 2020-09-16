@@ -4,6 +4,33 @@
   "avatar": "",
   "items": [
     {
+      "title": "Summary",
+      "location": "/learn/hvac/summary",
+      "items": [
+
+      ]
+    },
+    {
+      "title": "Science of HVAC",
+      "location": "",
+      "items": [
+        {
+          "title": "Air Pressure",
+          "location": "/learn/science-of-hvac/air-pressure",
+          "items": [
+
+          ]
+        },
+        {
+          "title": "Temperature",
+          "items": [
+
+          ],
+          "location": "/learn/science-of-hvac/temperature"
+        }
+      ]
+    },
+    {
       "title": "Refrigeration",
       "location": "",
       "items": [
@@ -55,33 +82,6 @@
           "items": [
 
           ]
-        }
-      ]
-    },
-    {
-      "title": "Summary",
-      "location": "/learn/hvac/summary",
-      "items": [
-
-      ]
-    },
-    {
-      "title": "Science of HVAC",
-      "location": "",
-      "items": [
-        {
-          "title": "Air Pressure",
-          "location": "/learn/science-of-hvac/air-pressure",
-          "items": [
-
-          ]
-        },
-        {
-          "title": "Temperature",
-          "items": [
-
-          ],
-          "location": "/learn/science-of-hvac/temperature"
         }
       ]
     }
