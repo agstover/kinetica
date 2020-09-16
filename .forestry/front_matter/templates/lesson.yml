@@ -8,3 +8,5 @@ fields:
     required: false
   label: Title
   description: This value will be used for the page's header.
+pages:
+- _content/learn/hvac/just-a-test-document.mdx
