@@ -11,3 +11,8 @@ fields:
     schema:
       format: markdown
   label: Content
+- name: frontmatter
+  type: include
+  config: {}
+  template: lesson-frontmatter
+  label: Frontmatter
