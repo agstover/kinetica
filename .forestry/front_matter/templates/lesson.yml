@@ -1,6 +1,7 @@
 ---
 label: Lesson
 hide_body: false
+display_field: slug
 fields:
 - name: title
   type: text
