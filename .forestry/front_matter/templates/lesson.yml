@@ -5,6 +5,12 @@ fields:
 - name: title
   type: text
   config:
-    required: false
+    required: true
   label: Title
   description: This value will be used for the page's header.
+- name: slug
+  type: text
+  config:
+    required: true
+  label: Slug
+  description: slug-should-be-in-kebab-case
