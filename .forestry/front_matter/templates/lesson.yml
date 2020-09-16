@@ -17,5 +17,6 @@ fields:
   description: slug-should-be-in-kebab-case
 pages:
 - _content/learn/hvac/intro-to-hvac.mdx
+- _content/learn/hvac/refrigeration/evaporative-cooling.mdx
 - _content/learn/hvac/the-science/air-pressure.mdx
 - _content/learn/hvac/the-science/the-physics-of-temperature.mdx
