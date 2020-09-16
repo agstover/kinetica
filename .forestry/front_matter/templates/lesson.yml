@@ -2,17 +2,17 @@
 label: Lesson
 hide_body: false
 fields:
-- name: content
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Content
 - name: frontmatter
   type: include
   config: {}
   template: lesson-frontmatter
   label: Frontmatter
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Content
