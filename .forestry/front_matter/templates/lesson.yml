@@ -2,17 +2,9 @@
 label: Lesson
 hide_body: false
 fields:
-- name: frontmatter
-  type: include
-  config: {}
-  template: lesson-frontmatter
-  label: Frontmatter
-- name: content
-  type: textarea
-  default: ''
+- name: title
+  type: text
   config:
     required: false
-    wysiwyg: true
-    schema:
-      format: markdown
-  label: Content
+  label: Title
+  description: This value will be used for the page's header.
