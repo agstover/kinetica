@@ -15,3 +15,5 @@ fields:
     required: true
   label: Slug
   description: slug-should-be-in-kebab-case
+pages:
+- _content/learn/hvac/intro-to-hvac.mdx
