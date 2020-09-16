@@ -4,6 +4,19 @@
   "avatar": "",
   "items": [
     {
+      "title": "Refrigeration",
+      "location": "",
+      "items": [
+        {
+          "title": "Evaporator",
+          "location": "/learn/refrigeration/evaporator",
+          "items": [
+
+          ]
+        }
+      ]
+    },
+    {
       "title": "Summary",
       "location": "/learn/hvac/summary",
       "items": [
