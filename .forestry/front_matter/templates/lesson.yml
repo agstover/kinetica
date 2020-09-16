@@ -17,6 +17,7 @@ fields:
   description: slug-should-be-in-kebab-case
 pages:
 - _content/learn/hvac/intro-to-hvac.mdx
+- _content/learn/hvac/refrigeration/condenser-heat-dumper.mdx
 - _content/learn/hvac/refrigeration/evaporative-cooling.mdx
 - _content/learn/hvac/refrigeration/the-basics-of-refrigeration.mdx
 - _content/learn/hvac/refrigeration/the-compressor-pressurizer.mdx
